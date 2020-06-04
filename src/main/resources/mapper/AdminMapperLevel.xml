@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cykj.mapper.AdminMapperLevel">
+<!--    <select id="login" resultType="com.cykj.entity.AdminLevel" parameterType="com.cykj.entity.Admin">-->
+<!--        select * from  tb_membershiplevel where acount=#{acount} and pass=#{pass}-->
+<!--    </select>-->
+
+<!--    <insert id="addAdmin" parameterType="com.cykj.entity.AdminLevel">-->
+<!--        insert into tb_membershiplevel(acount,name,pass) value (#{acount},#{name},#{pass})-->
+<!--    </insert>-->
+
+    <update id="updateAdmin" parameterType="com.cykj.entity.AdminLevel">
+     update tb_membershiplevel set acount=#{acount},integral=#{integral},level=#{level} where id=#{id}
+    </update>
+
+    <delete id="deleteAdmin">
+         delete from tb_membershiplevel where id=#{id}
+    </delete>
+
+    <select id="selectList" resultType="com.cykj.entity.AdminLevel" parameterType="com.cykj.entity.AdminLevel">
+        select * from tb_membershiplevel
+        <where>
+            <if test="e.acount!=null and e.acount!=''"> and acount like concat('%',#{e.acount},'%')</if>
+        </where>
+        limit #{start},#{pageSize}
+    </select>
+
+    <select id="selectListCount" resultType="int" parameterType="com.cykj.entity.AdminLevel">
+        select count(id) from tb_membershiplevel
+        <where>
+            <if test="e.acount!=null and e.acount!=''"> and acount like concat('%',#{e.acount},'%')</if>
+        </where>
+    </select>
+</mapper>

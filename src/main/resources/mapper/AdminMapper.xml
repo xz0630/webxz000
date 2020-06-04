@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cykj.mapper.AdminMapper">
+    <select id="login" resultType="com.cykj.entity.Admin" parameterType="com.cykj.entity.Admin">
+        select * from  tb_admin where acount=#{acount} and pass=#{pass}
+    </select>
+
+    <insert id="addAdmin" parameterType="com.cykj.entity.Admin">
+        insert into tb_admin(acount,name,pass) value (#{acount},#{name},#{pass})
+    </insert>
+
+    <update id="updateAdmin" parameterType="com.cykj.entity.Admin">
+     update tb_admin set acount=#{acount},name=#{name},pass=#{pass} where id=#{id}
+    </update>
+
+    <delete id="deleteAdmin">
+         delete from tb_admin where id=#{id}
+    </delete>
+
+    <select id="selectList" resultType="com.cykj.entity.Admin" parameterType="com.cykj.entity.Admin">
+        select * from tb_admin
+        <where>
+            <if test="e.name!=null and e.name!=''"> and name like concat('%',#{e.name},'%')</if>
+        </where>
+        limit #{start},#{pageSize}
+    </select>
+
+    <select id="selectListCount" resultType="int" parameterType="com.cykj.entity.Admin">
+        select count(id) from tb_admin
+        <where>
+            <if test="e.name!=null and e.name!=''"> and name like concat('%',#{e.name},'%')</if>
+        </where>
+    </select>
+</mapper>

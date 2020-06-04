@@ -1,0 +1,45 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+div form{
+  width: 800px;
+  height: 60px;
+  margin-left: 380px;
+  margin-top: 50px;
+}
+body{
+}
+div label{
+  line-height: 20px;
+  font-size:20px;
+}
+input[type="submit"]{
+  font-size:20px;
+  line-height: 20px;
+}
+input[type="checkbox"]{
+  font-size:25px;
+  line-height: 25px;
+}
+div table, td, th
+{
+  width: 600px;
+	border:2px solid green;
+  margin-left: 380px;
+}
+tr:hover{
+  text-align:center;
+  background-color: green;
+  color: #0000ff;
+}
+td{
+  text-align:center;
+}
+th
+{
+  color:black;
+    text-align:center;
+  /* margin: 0px auto; */
+  /* text-align:center; */
+}

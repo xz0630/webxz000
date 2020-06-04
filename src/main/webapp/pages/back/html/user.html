@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>用户信息管理</title>
+    <link rel="stylesheet" href="back/css/user.css">
+  </head>
+  <body>
+    <div>
+      <form action="" method="">
+          <label for="fname">用户名：</label>
+          <input type="text" id="fname" name="firstname" placeholder="请输入用户名">
+          <label for="lname">密码：</label>
+          <input type="text" id="lname" name="lastname" placeholder="请输入密码">
+          <label >性别：</label>
+          <select name="mysex">
+          <option value="男">男</option>
+          <option value="女">女</option>
+          </select>
+          <input type="submit" value="添加"><br>
+          <input type="checkbox">全选
+          <input type="submit" value="删除">
+        </form>
+        <table align="center" border="1">
+          <tr>
+              <th>用户信息管理</th>
+          </tr>
+          <tr>
+            <td>选择</td>
+            <td>用户名</td>
+            <td>密码</td>
+            <td>性别</td>
+            <td>操作</td>
+          </tr>
+          <tr>
+            <td>
+              <input type="checkbox" name=" " value="" >
+            </td>
+            <td>张三</td>
+            <td>123456</td>
+            <td>男</td>
+            <td>
+              	<input type="submit" name="" value="删除" >
+                <input type="submit" name="" value="修改" >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="checkbox" name=" " value="" >
+            </td>
+            <td>李四</td>
+            <td>123456</td>
+            <td>男</td>
+            <td>
+                <input type="submit" name="" value="删除" >
+                <input type="submit" name="" value="修改" >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="checkbox" name=" " value="" >
+            </td>
+            <td>王五</td>
+            <td>123456</td>
+            <td>男</td>
+            <td>
+                <input type="submit" name="" value="删除" >
+                <input type="submit" name="" value="修改" >
+            </td>
+          </tr>
+        </table>
+    </div>
+  </body>
+</html>
